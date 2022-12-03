@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "spring.rabbitmq.template",
+      "type": "java.lang.String",
+      "description": "Description for spring.rabbitmq.template."
+  }
+] }
