@@ -20,7 +20,7 @@ public interface GoodsService {
      * @param rows     xx
      * @return xx
      */
-    PageResult<SpuBo> querySpuBoByPage(String key, Integer saleable, Integer page, Integer rows);
+    PageResult<SpuBo> querySpuBoByPage(String key, Boolean saleable, Integer page, Integer rows);
 
     /**
      * 保存spuBo的信息 包括商品集与商品信息

@@ -27,15 +27,15 @@ public class GoodsController {
     @GetMapping("spu/page")
     public ResponseEntity<PageResult<SpuBo>> querySpuByPage(
             @RequestParam(value = "key",required = false) String key,
-            @RequestParam(value = "saleable",defaultValue = "2") Integer saleable,
+            @RequestParam(value = "saleable",required = false) Boolean saleable,
             @RequestParam(value = "page",defaultValue = "1") Integer page,
             @RequestParam(value = "rows",defaultValue = "5") Integer rows
     ){
         PageResult<SpuBo> pageResult = this.goodsService.querySpuBoByPage(key,saleable,page,rows);
-//        if(CollectionUtils.isEmpty(pageResult.getItems())){
-////            集合为空
-//            return ResponseEntity.notFound().build();
-//        }
+        if(CollectionUtils.isEmpty(pageResult.getItems())){
+//            集合为空
+            return ResponseEntity.notFound().build();
+        }
         return ResponseEntity.ok(pageResult);
     }
 

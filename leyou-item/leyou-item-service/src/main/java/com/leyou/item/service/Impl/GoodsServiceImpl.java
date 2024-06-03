@@ -67,7 +67,7 @@ public class GoodsServiceImpl implements GoodsService {
      * @return xx
      */
     @Override
-    public PageResult<SpuBo> querySpuBoByPage(String key, Integer saleable, Integer page, Integer rows) {
+    public PageResult<SpuBo> querySpuBoByPage(String key, Boolean saleable, Integer page, Integer rows) {
 
         //        数据库查询对象
         Example example = new Example(Spu.class);
@@ -78,7 +78,7 @@ public class GoodsServiceImpl implements GoodsService {
             criteria.andLike("title","%"+key+"%");
         }
 //        条件搜索
-        if (saleable!=2){
+        if (saleable!=null){
             criteria.andEqualTo("saleable",saleable);
         }
 

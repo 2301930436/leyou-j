@@ -11,9 +11,9 @@ import java.security.PublicKey;
 
 public class JwtTest {
 
-    private static final String pubKeyPath = "D:\\JetBrains\\ideaIU-2021.1\\tmp\\rsa\\rsa.pub";
+    private static final String pubKeyPath = "E:\\Data\\leyou\\leyou-j\\rsa.pub";
 
-    private static final String priKeyPath = "D:\\JetBrains\\ideaIU-2021.1\\tmp\\rsa\\rsa.pri";
+    private static final String priKeyPath = "E:\\Data\\leyou\\leyou-j\\rsa.pri";
 
     private PublicKey publicKey;
 
@@ -43,7 +43,7 @@ public class JwtTest {
 
     @Test
     public void testParseToken() throws Exception {
-        String token = "eyJhbGciOiJSUzI1NiJ9.eyJpZCI6MjAsInVzZXJuYW1lIjoiamFjayIsImV4cCI6MTY2ODU3ODMwMH0.TCHHnXsM1W6Q9BeDDSVTJV50JG5kDveDmc76xPt2XmtPJykUJZ8Nv4Mjp7LMfjLtFt76_Az8fJ7JCjVEWXZt-YoIRG6RAsMvmxDUc4REDeYGevERDj9nptjoH8eMF7DeIF62NZ6pqGcRc_aYxPrj6QAW8cvooMe1HjqAeWWXAT4";
+        String token = "eyJhbGciOiJSUzI1NiJ9.eyJpZCI6MjAsInVzZXJuYW1lIjoiamFjayIsImV4cCI6MTcxNzA2NjU3OH0.SPstU8gUdWQbuuXhNBEDClAcuMGiz1eCL-wIUJk4YxHpYRaXZS2EMl_y25oS8Y3DqLsmJOYttmcO6UvUxI5DOQFh-pooRrf9wU2mour4_bLiO01eDVZIeYqUEgm4dh8lynmbwx70s5-xqrIGnNog0NTuKmQjPXRBl2TAR1N3w9Y";
 
         // 解析token
         UserInfo user = JwtUtils.getInfoFromToken(token, publicKey);

@@ -7,12 +7,12 @@ spring:
   data:
     elasticsearch:
       cluster-name: elasticsearch
-      cluster-nodes: 192.168.137.2:9300
-  rabbitmq:
-    host: 192.168.137.2
-    username: leyou
-    password: leyou
-    virtual-host: /leyou
+      cluster-nodes: 192.168.31.185:9300
+#  rabbitmq:
+#    host: 192.168.31.185
+#    username: leyou
+#    password: leyou
+#    virtual-host: /leyou
   datasource:
     url: jdbc:mysql://192.168.31.185:3306/leyou?serverTimezone=UTC
     username: root

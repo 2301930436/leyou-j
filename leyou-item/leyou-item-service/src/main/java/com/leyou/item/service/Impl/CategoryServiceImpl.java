@@ -44,4 +44,17 @@ public class CategoryServiceImpl implements CategoryService {
         Category c1 = this.categoryMapper.selectByPrimaryKey(c2.getParentId());
         return Arrays.asList(c1,c2,c3);
     }
+    public void addCategories(Category category) {
+        this.categoryMapper.insert(category);
+    }
+    public void updataCategories(Category category) {
+        this.categoryMapper.updateByPrimaryKeySelective(category);
+    }
+    public void deleteCategories(Long id) {
+        this.categoryMapper.deleteByPrimaryKey(id);
+    }
+
+    public List<Category> queryByBrandId(Long bid) {
+        return this.categoryMapper.queryByBid(bid);
+    }
 }

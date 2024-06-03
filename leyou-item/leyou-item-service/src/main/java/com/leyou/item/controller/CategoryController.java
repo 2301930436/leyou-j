@@ -7,10 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.CollectionUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -55,4 +52,29 @@ public class CategoryController {
         List<Category> categories = this.categoryService.queryAllByCid3(id);
         return ResponseEntity.ok(categories);
     }
+    @PostMapping
+    public ResponseEntity<?> addCategories(@RequestBody Category category) {
+        if (category == null) {
+            return ResponseEntity.badRequest().build();
+        }
+        this.categoryService.addCategories(category);
+        return ResponseEntity.ok().build();
+    }
+    @PutMapping
+    public ResponseEntity<?> updataCategories(@RequestBody Category category) {
+        if (category == null) {
+            return ResponseEntity.badRequest().build();
+        }
+        this.categoryService.updataCategories(category);
+        return ResponseEntity.ok().build();
+    }
+    @DeleteMapping("{id}")
+    public ResponseEntity<?> deleteCategories(@PathVariable Long id) {
+        if (id == null||id<0) {
+            return ResponseEntity.badRequest().build();
+        }
+        this.categoryService.deleteCategories(id);
+        return ResponseEntity.ok().build();
+    }
+
 }

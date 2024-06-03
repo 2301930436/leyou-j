@@ -19,4 +19,9 @@ public interface CategoryService {
 
     public List<Category> queryAllByCid3(Long id);
 
+    public void addCategories(Category category);
+    public void updataCategories(Category category);
+    public void deleteCategories(Long id);
+
+    public List<Category> queryByBrandId(Long bid);
 }

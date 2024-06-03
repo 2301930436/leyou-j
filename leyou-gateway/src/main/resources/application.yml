@@ -21,9 +21,10 @@ zuul:
     connect-timeout-millis: 15000 #HTTP连接超时大于Hystrix的超时时间
     socket-timeout-millis: 60000   #socket超时
   sensitive-headers:
+
 leyou:
   jwt:
-    pubKeyPath: D:\JetBrains\ideaIU-2021.1\tmp\rsa\rsa.pub # 公钥地址
+    pubKeyPath: E:\Data\leyou\leyou-j\rsa.pub # 公钥地址
     cookieName: LY_TOKEN
   filter:
     allowPaths:
